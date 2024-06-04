@@ -1,0 +1,37 @@
+{% extends 'portfolio/layout.html' %}
+{% load static %}
+{% block main %}
+    <!-- main -->
+    <section class = "section-four">
+        <!-- single blog post -->
+        {% for blog in blogs %}
+            <div class = "blog">
+                <img src = "{{ blog.header_photo}}">
+                <div class = "blog-content">
+                    <span class = "badge">Photography</span>
+                    <span class = "misc-info">
+                        Published: {{ blog.time }}
+                    </span>
+                    <h3 class = "blog-title">
+                        {{ blog.title }}
+                    </h3>
+                    <p class = "blog-text">
+                        {{ blog.par_1 }}
+                    </p>
+                    <a href = "{% url 'portfolio:blogpage' blog.id %}" class = "btn">Read More</a>
+                </div>
+            </div>
+        {% endfor %}
+        <!-- end of single post -->
+    </section>
+    <!-- end of main -->
+    <script>
+        document.addEventListener('DOMContentLoaded', (event) => {
+            // Scroll to the first div with class="target-div"
+            const targetDiv = document.getElementsByClassName('section-four')[0];
+            if (targetDiv) {
+                targetDiv.scrollIntoView({ behavior: 'smooth' });
+            }
+        });
+    </script>
+{% endblock %}

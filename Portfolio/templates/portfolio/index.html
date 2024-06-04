@@ -1,0 +1,38 @@
+{% extends "portfolio/layout.html" %}
+{% load static %}
+{% block main %}
+<!-- main -->
+<section class = "section-two">
+    <div class = "container">
+        <h2>FOLLOW ON INSTAGRAM</h2>
+        <span>@Yaqin</span>
+        <div class = "insta-imgs">
+            <div>
+                <img src = "{% static 'portfolio/images/insta-1.jpg' %}">
+                <div class = "icon-overlay flex">
+                    <i class = "fab fa-instagram"></i>
+                </div>
+            </div>
+            <div>
+                <img src = "{% static 'portfolio/images/insta-2.jpg' %}">
+                <div class = "icon-overlay flex">
+                    <i class = "fab fa-instagram"></i>
+                </div>
+            </div>
+            <div>
+                <img src = "{% static 'portfolio/images/insta-3.jpg' %}">
+                <div class = "icon-overlay flex">
+                    <i class = "fab fa-instagram"></i>
+                </div>
+            </div>
+            <div>
+                <img src = "{% static 'portfolio/images/insta-4.jpg' %}">
+                <div class = "icon-overlay flex">
+                    <i class = "fab fa-instagram"></i>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- end of main -->
+{% endblock %}

@@ -1,0 +1,32 @@
+{% extends 'portfolio/layout.html' %}
+{% load static %}
+{% load custom_filters %}
+{% block main %}
+    <!-- main -->
+    <section class = "section-three">
+        <div class = "container">
+            <div class = "gallery">
+                {% for path in imgs_path %}
+                    <a href = "{{ MEDIA_URL }}{{ path }}">
+                        <div class = "single-img">
+                            <img src = "{{ MEDIA_URL }}{{ path }}" alt = "gallery image">
+                            <div class = "single-img-content">
+                                <h3>{{ path|basename }}</h3>
+                            </div>
+                        </div>
+                    </a>
+                {% endfor %}              
+            </div>
+        </div>
+    </section>          
+    <!-- end of main -->
+    <script>
+        document.addEventListener('DOMContentLoaded', (event) => {
+            // Scroll to the first div with class="target-div"
+            const targetDiv = document.getElementsByClassName('section-three')[0];
+            if (targetDiv) {
+                targetDiv.scrollIntoView({ behavior: 'smooth' });
+            }
+        });
+    </script>
+{% endblock %}
